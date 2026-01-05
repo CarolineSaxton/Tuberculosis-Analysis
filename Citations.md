@@ -4,3 +4,4 @@
 2. ['Analysis on Drug-Resistance-Associated Mutations among Multidrug-Resistant _Mycobacterium tuberculosis_ Isolates'](https://pmc.ncbi.nlm.nih.gov/articles/PMC8614678/#_ad93)  © 2024 (Authors: Hongbing Jia, Yuhui Xu, Zhaogang Sun)
 3. ['Variation among Genome Sequences of H37Rv Strains of _Mycobacterium tuberculosis_ from Multiple Laboratories'](https://pmc.ncbi.nlm.nih.gov/articles/PMC2897344/#t2fn3)  © 2010, American Society for Microbiology
 4. [Mycobacterium Tuberculosis Genome Annotation](https://www.ncbi.nlm.nih.gov/datasets/gene/GCF_000195955.2/)  © 2017 NCBI RefSeq Database
+5. ['Molecular Detection of Drug Resistance (MDDR) in Mycobacterium tuberculosis Complex'](https://www.cdc.gov/tb/php/laboratory-information/mddr-user-guide.html)  © 2024 U.S. Centers for Disease Control and Prevention
