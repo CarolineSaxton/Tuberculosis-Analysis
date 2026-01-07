@@ -44,11 +44,11 @@ complete_genome_analysis = input("Would you like perform complete genome analysi
 if complete_genome_analysis == "yes":
     choice1 = input("Would you like to use a nucleotide coordinate (input:'n') or codon number (input:'c')?  ")
     if choice1 == "n":
-        snp_position = int(input("Nucleotide Coordinate: ")) - 1
-        print(f"Nucleotide: {dna_sequence[snp_position]}")
+        coordinate = int(input("Nucleotide Coordinate: ")) - 1
+        print(f"Nucleotide: {dna_sequence[coordinate]}")
         codon_size = 3
         codon_sequence = [dna_sequence[i:i + codon_size] for i in range(0, len(dna_sequence), codon_size)]
-        codon_number = (snp_position // 3) + 1
+        codon_number = (coordinate // 3) + 1
         print(f"Codon Number: {codon_number}")
         codon = codon_sequence[codon_number - 1]
         print(f"Codon: {codon}")
