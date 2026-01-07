@@ -75,9 +75,9 @@ plt.bar(
     nucleotide_percentages.values(),  # y-axis: Percentage of each nucleotide
     color=['yellow', 'red', 'blue', 'green']  # Colors for each nucleotide bar
 )
-plt.title("Nucleotide Frequency")  # Provides context for the visualization
+plt.title("Nucleotide Frequency")
 plt.xlabel("Nucleotide")  # Indicates the nucleotides being counted (A, T, C, G)
-plt.ylabel("Frequency")  # Shows the frequency of each nucleotide
+plt.ylabel("Frequency")
 plt.show()  # Renders the bar chart
 
 # Calculate GC Content
