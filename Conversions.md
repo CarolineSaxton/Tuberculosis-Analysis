@@ -1,3 +1,5 @@
+# Conversions to get amino acid/codon
+
 ```
 amino_acid_codes = {
     "GCT": "Ala", "GCC": "Ala", "GCA": "Ala", "GCG": "Ala",  # Alanine
