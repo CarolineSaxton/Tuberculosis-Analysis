@@ -102,18 +102,6 @@ if rpoB_analysis == "yes":
     if 426 < rpoB_codon_number < 452:
         print("part of rrdr segment")
 
-# mutations code
-'''if original_amino_acid == mutated_amino_acid:
-    print("This is a silent mutation, also known as a synonymous SNP.")
-    print("A silent mutation will have no affect on the final amino acid sequence or the protein structure of the gene.")
-else:
-    print("This is a missense mutation, also known as a non-synonymous SNP.")
-    print("A missense mutation will have affect on the final amino acid sequence or the protein structure of the gene.")
-print()
-mutation = input("Mutated Nucleotide (uppercase): ")
-    mutated_sequence = dna_sequence[:snp_position] + mutation + dna_sequence[snp_position+1:]'''
-
-gene_functions_analysis = input("Would you like to perform gene functions analysis? (yes/no): ")
 if gene_functions_analysis == "yes":
     import itertools
     virulence = {"ranges": itertools.chain(range(28362,29205), range(71587,71826), range(71821,72222), range(152324, 154129), range(154232,155599), range(161771,162673), range(196861,197658)), "Name": "virulence"}
