@@ -1,4 +1,4 @@
-# rpoB gene analysis and general gene function analysis
+# _rpoB_ gene analysis and general gene function analysis
 
 1. Rifampicin Resistance Gene
 ```
@@ -12,5 +12,5 @@ if rpoB_analysis == "yes":
     amino_acid = amino_acid_codes.get(rpoB_codon)
     print(amino_acid)
     if 426 < rpoB_codon_number < 452:
-        print("part of rrdr segment")
+        print("The entered codon cooresponds to an amino acid that is within the Rifampicin Resistance Determining Region (RRDR) of the rpoB gene.")
 ```
