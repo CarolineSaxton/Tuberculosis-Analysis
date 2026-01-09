@@ -1,6 +1,6 @@
 
 from Bio import Entrez, SeqIO
-Entrez.email = "caroline.saxtonrowe@gmail.com" 
+Entrez.email = "add your email here" 
 
 # Fetch the DNA sequence from the NCBI database
 accession_number = "NC_000962.3" 
