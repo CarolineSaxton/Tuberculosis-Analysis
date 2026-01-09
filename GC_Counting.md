@@ -22,7 +22,9 @@ __Knowing the total counts of each nucleotide and percent of each out of the tot
 
 Code output will look something like this:
 
-![Image of Graph](file:///Users/csaxtonrowe1329/Desktop/Screenshot%202026-01-07%20at%202.54.30%E2%80%AFPM.png)
+<img width="630" height="474" alt="image" src="https://github.com/user-attachments/assets/1d1e974b-8358-4012-a37b-87ddb876d389" />
+
+
 
 3. Determine the Guanine/Cytosine content
 >`def calculate_gc_content(sequence):`  
