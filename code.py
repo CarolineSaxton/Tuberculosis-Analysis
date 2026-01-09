@@ -39,27 +39,26 @@ amino_acid_codes = {
     "TAT": "Tyr", "TAC": "Tyr",                          # Tyrosine
     "TAA": "STOP", "TAG": "STOP", "TGA": "STOP"               # STOP codons
 }
-# Find nucleotide and its coordinate, as well as  the cooresponding codon and amino acid
-complete_genome_analysis = input("Would you like perform complete genome analysis? (yes/no): ")
-if complete_genome_analysis == "yes":
-    choice1 = input("Would you like to use a nucleotide coordinate (input:'n') or codon number (input:'c')?  ")
-    if choice1 == "n":
-        coordinate = int(input("Nucleotide Coordinate: ")) - 1
-        print(f"Nucleotide: {dna_sequence[coordinate]}")
-        codon_size = 3
-        codon_sequence = [dna_sequence[i:i + codon_size] for i in range(0, len(dna_sequence), codon_size)]
-        codon_number = (coordinate // 3) + 1
-        print(f"Codon Number: {codon_number}")
-        codon = codon_sequence[codon_number - 1]
-        print(f"Codon: {codon}")
-    if choice1 == "c":
-        codon_number = int(input("Codon Number: "))
-        codon_size = 3
-        codon_sequence = [dna_sequence[i:i + codon_size] for i in range(0, len(dna_sequence), codon_size)]
-        codon = codon_sequence[codon_number - 1]
-        print(f"Codon: {codon}")
-    amino_acid = amino_acid_codes.get(codon)
-    print(f"Amino Acid: {amino_acid}")
+
+print("Performing Broad Genomic Analysis...")
+choice1 = input("Would you like to use a nucleotide coordinate (input:'n') or codon number (input:'c')?  ")
+if choice1 == "n":
+    coordinate = int(input("Nucleotide Coordinate: ")) - 1
+    print(f"Nucleotide: {dna_sequence[coordinate]}")
+    codon_size = 3
+    codon_sequence = [dna_sequence[i:i + codon_size] for i in range(0, len(dna_sequence), codon_size)]
+    codon_number = (coordinate // 3) + 1
+    print(f"Codon Number: {codon_number}")
+    codon = codon_sequence[codon_number - 1]
+    print(f"Codon: {codon}")
+if choice1 == "c":
+    codon_number = int(input("Codon Number: "))
+    codon_size = 3
+    codon_sequence = [dna_sequence[i:i + codon_size] for i in range(0, len(dna_sequence), codon_size)]
+    codon = codon_sequence[codon_number - 1]
+    print(f"Codon: {codon}")
+amino_acid = amino_acid_codes.get(codon)
+print(f"Amino Acid: {amino_acid}")
 
 # Import a Counter to find and graph total number of adenine, thymine, guanine and cytosine nucleotides
 from collections import Counter
@@ -90,7 +89,7 @@ gc_content = calculate_gc_content(dna_sequence)
 print(f"GC Content: {gc_content:.2f}%")  # Output example: "GC Content: 46.67%"
 
 # rpoB gene analysis for MDR
-rpoB_analysis = input("Would you like to perform rpoB gene analysis? (yes/no): ")
+rpoB_analysis = input("Would you like to perform 'rpoB gene' specific analysis? (yes/no): ")
 if rpoB_analysis == "yes":
     rpoB_gene = dna_sequence[759806:763325]
     rpoB_codon_sequence = [rpoB_gene[i:i + codon_size] for i in range(0, len(rpoB_gene), codon_size)]
@@ -102,6 +101,7 @@ if rpoB_analysis == "yes":
     if 426 < rpoB_codon_number < 452:
         print("part of rrdr segment")
 
+gene_functions_analysis = input("Would you like to perform possible functions analysis for the selected gene? (yes/no)?")
 if gene_functions_analysis == "yes":
     import itertools
     virulence = {"ranges": itertools.chain(range(28362,29205), range(71587,71826), range(71821,72222), range(152324, 154129), range(154232,155599), range(161771,162673), range(196861,197658)), "Name": "virulence"}
