@@ -19,15 +19,14 @@ __Knowing the total counts of each nucleotide and percent of each out of the tot
 `plt.xlabel("Nucleotide")  # Indicates the nucleotides being counted (A, T, C, G)`  
 `plt.ylabel("Frequency")`  
 `plt.show()`
+
 Code output will look something like this:
 
 ![Image of Graph](file:///Users/csaxtonrowe1329/Desktop/Screenshot%202026-01-07%20at%202.54.30%E2%80%AFPM.png)
 
 3. Determine the Guanine/Cytosine content
-def calculate_gc_content(sequence):
-    gc_count = sequence.count('G') + sequence.count('C')
-    return (gc_count / len(sequence)) * 100
-
-gc_content = calculate_gc_content(dna_sequence)
-
-print(f"GC Content: {gc_content:.2f}%")  # Output example: "GC Content: 46.67%"
+>`def calculate_gc_content(sequence):`  
+    `gc_count = sequence.count('G') + sequence.count('C')`  
+    `return (gc_count / len(sequence)) * 100`  
+`gc_content = calculate_gc_content(dna_sequence)`  
+`print(f"GC Content: {gc_content:.2f}%")  # Output example: "GC Content: 46.67%"`  
