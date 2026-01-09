@@ -1,5 +1,7 @@
 # Conversions to get amino acid/codon
+Uses a nucleotide coordinate or codon number to determine the 3 bases in the codon and its cooresponding amino acid.
 
+1. Codon to Amino Acid Conversion Chart
 ```
 amino_acid_codes = {
     "GCT": "Ala", "GCC": "Ala", "GCA": "Ala", "GCG": "Ala",  # Alanine
@@ -26,4 +28,3 @@ amino_acid_codes = {
 }
 ```
 
-This code does....
