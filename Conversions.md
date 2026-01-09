@@ -28,6 +28,7 @@ amino_acid_codes = {
 }
 ```
 
+
 2. Nucleotide Coordinate or Codon Number entered, code converts sequence into groups of 3 (codons), then into amino acids
 ```
 print("Performing Broad Genomic Analysis...")
