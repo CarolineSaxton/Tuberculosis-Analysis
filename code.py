@@ -59,7 +59,7 @@ if choice1 == "c":
     print(f"Codon: {codon}")
 amino_acid = amino_acid_codes.get(codon)
 print(f"Amino Acid: {amino_acid}")
-
+print()
 # Import a Counter to find and graph total number of adenine, thymine, guanine and cytosine nucleotides
 from collections import Counter
 nucleotide_counts = Counter(dna_sequence)
@@ -87,7 +87,7 @@ def calculate_gc_content(sequence):
 gc_content = calculate_gc_content(dna_sequence)
 
 print(f"GC Content: {gc_content:.2f}%")  # Output example: "GC Content: 46.67%"
-
+print()
 # rpoB gene analysis for MDR
 rpoB_analysis = input("Would you like to perform 'rpoB gene' specific analysis? (yes/no): ")
 if rpoB_analysis == "yes":
