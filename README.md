@@ -100,9 +100,31 @@ print(f"Amino Acid: {amino_acid}")
 
 
 ## Part 3: Simulating the affect of a mutation on the codon/amino acid
-1. 
+Random mutations are one way that antibiotic-resistance in _M. Tuberculosis_ occurs. Understanding quickly which mutations have an affect on the amino acid sequence of the gene is crutial to discovering what mutations could have an affect on its antibiotic-resistance. If the amino acid remains unchanged, the mutation likely has no affect on the gene or its resistance.
+
+1. Replace the original nucleotide with a mutated one in the dna sequence
+```
+print("Mutation Simulation-")
+mutation = input("Chose a New Nucleotide Replacement(uppercase): ")
+mutated_sequence = dna_sequence[:snp_position] + mutation + dna_sequence[snp_position+1:]
+```
+
+2. Convert the nucelotide into a codon, then amino acid, as done in part 2, step 2
+```
+codon_size = 3
+mcodon_sequence = [mutated_sequence[i:i + codon_size] for i in range(0, len(mutated_sequence), codon_size)]
+mcodon_number = (snp_position // 3) + 1
+print(f"Mutated Codon Number: {mcodon_number}")
+mcodon = mcodon_sequence[mcodon_number - 1]
+print(f"Mutated Codon: {codon}")
+mamino_acid = amino_acid_codes.get(mcodon)
+print(f"Mutated Amino Acid: {mamino_acid}")
+```
+
+The "Mutated Amino Acid:" output can then be compared to the original amino acid, "Amino Acid:" output, from Part 3.
 
 ## Part 4: _rpoB_ gene analysis for Rifampicin resistance
+One specific antibiotic used to treat tuberculosis is Rifampicin. However, resistance to this treatment has become increasingly common in strains recently. Research has uncovered that this resistance is mainly coming from mutations in the rpoB gene of _Mycobacterium Tuberculosis_, and more specifically, in the gene's RRDR (Rifampicin Resiatance Determining Region), which is between codons 426 and 452 of the rpoB gene. This code helps easily identify if a mutation happens within this important region.
 
 1. Sets location of the rpoB gene in terms of the nucelotide range within the _Mycobacterium Tuberculosis_ H37Rv complete genome
 ```
@@ -126,3 +148,6 @@ if rpoB_analysis == "yes":
     if 426 < rpoB_codon_number < 452:
         print("The entered codon cooresponds to an amino acid that is within the Rifampicin Resistance Determining Region (RRDR) of the rpoB gene.")
 ```
+
+## Final Output:
+Here is an example of what the final output of the code might look like, as used in Visual Studio Code.
