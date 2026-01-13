@@ -60,6 +60,20 @@ if choice1 == "c":
 amino_acid = amino_acid_codes.get(codon)
 print(f"Amino Acid: {amino_acid}")
 print()
+
+print("Mutation Simulation-")
+mutation = input("Chose a New Nucleotide Replacement(uppercase): ")
+mutated_sequence = dna_sequence[:snp_position] + mutation + dna_sequence[snp_position+1:]
+codon_size = 3
+mcodon_sequence = [mutated_sequence[i:i + codon_size] for i in range(0, len(mutated_sequence), codon_size)]
+mcodon_number = (snp_position // 3) + 1
+print(f"Mutated Codon Number: {codon_number}")
+mcodon = codon_sequence[codon_number - 1]
+print(f"Mutated Codon: {codon}")
+mamino_acid = amino_acid_codes.get(codon)
+print(f"Mutated Amino Acid: {mamino_acid}")
+print()
+
 # Import a Counter to find and graph total number of adenine, thymine, guanine and cytosine nucleotides
 from collections import Counter
 nucleotide_counts = Counter(dna_sequence)
