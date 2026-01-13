@@ -4,8 +4,6 @@ My project was to create a code to perform basic microbiology gene analysis, usi
 Tuberculosis is a serious infection that claims roughly a million lives globally each year, cause by the bacteria _Mycobacterium Tuberculosis_. While most cases can currently be treated with antibiotics, more and more antibiotic-resistant strains are appearing. This is a result of random mutations in the bacteria's DNA. Therefore, it is extremely impotant that as research on resistance continues to expand, basic genetic information is quickly acccessible and easy to understand, which can be done with code like this.
 
 
-
-
 ## Part 1: Counting and Graphing Total Nucleotide Counts
 Knowing the total counts of each nucleotide and percent of each out of the total of any gene or sequence is important to understanding its strength. This is all determined by a gene's "GC Content", meaning its percent of Guanine or Cytosine nucleotides.  Guanine and Cytosine form triple hydrogen bonds between each other, stronger than those formed by the two other nucloetides (Adenine/Thymine). Therefore, the higher the GC content of a gene, the stronger its DNA is considered because it contains a greater number of (stronger) triple bonds.
 
@@ -46,7 +44,8 @@ print(f"GC Content: {gc_content:.2f}%")  # Output example: "GC Content: 46.67%"
 
 
 ## Part 2: Conversions to get amino acid/codon
-Uses a nucleotide coordinate or codon number to determine the 3 bases in the codon and its cooresponding amino acid.
+Next, the code asks for either a nucleotide coordinate or codon number, used to determine the 3 bases in the codon and its cooresponding amino acid.
+Allowing the user to enter either a nucleotide or codon allows for more seamless use, gien that both are very common in research and both are not always explicity given. Being able to easily determine the 3 bases in a codon or its amino acid is imporant to determine a mutation's affect on a sequence, simulated in the next part.
 
 1. Codon to Amino Acid Conversion Chart
 ```
@@ -100,7 +99,10 @@ print(f"Amino Acid: {amino_acid}")
 ```
 
 
-## Part 3: _rpoB_ gene analysis for Rifampicin resistance
+## Part 3: Simulating the affect of a mutation on the codon/amino acid
+1. 
+
+## Part 4: _rpoB_ gene analysis for Rifampicin resistance
 
 1. Sets location of the rpoB gene in terms of the nucelotide range within the _Mycobacterium Tuberculosis_ H37Rv complete genome
 ```
