@@ -1,19 +1,13 @@
 # Read Me for Tuberculosis Gene Analysis
-This code can perform basic microbiology gene analysis involving amino acid conversions and nucleotide sequence strength determintation. It is currently tailored for analysis of the gene _M. Tuberculosis_ H37Rv, a common lab isolate of Mycobacterium Tuberculosis, the bacteria that causes tuberculosis infection. All refrencing of the gene and its genome come from the NCBI database, accession number NC_000962.3. 
+My project was to create a code to perform basic microbiology gene analysis, using python. The analysis involves amino acid conversions, nucleotide sequence strength determintation, and nucleotide mutation simulation. The knowldge that this information provides about the gene is important for scientists to be able to access easily for research on mutations and drug resistance in bacteria. It is currently tailored for analysis of the gene _M. Tuberculosis_ H37Rv, a common lab isolate of Mycobacterium Tuberculosis, the bacteria that causes tuberculosis infection. All referencing of the gene and its genome come from the NCBI database, accession number NC_000962.3. 
 
-
-
-
-
-
-
-t
+Tuberculosis is a serious infection that claims roughly a million lives globally each year, cause by the bacteria _Mycobacterium Tuberculosis_. While most cases can currently be treated with antibiotics, more and more antibiotic-resistant strains are appearing. This is a result of random mutations in the bacteria's DNA. Therefore, it is extremely impotant that as research on resistance continues to expand, basic genetic information is quickly acccessible and easy to understand, which can be done with code like this.
 
 
 
 
 ## Part 1: Counting and Graphing Total Nucleotide Counts
-Knowing the total counts of each nucleotide and percent of each out of the total of any gene or sequence is important to its analysis. (Add more later)
+Knowing the total counts of each nucleotide and percent of each out of the total of any gene or sequence is important to understanding its strength. This is all determined by a gene's "GC Content", meaning its percent of Guanine or Cytosine nucleotides.  Guanine and Cytosine form triple hydrogen bonds between each other, stronger than those formed by the two other nucloetides (Adenine/Thymine). Therefore, the higher the GC content of a gene, the stronger its DNA is considered because it contains a greater number of (stronger) triple bonds.
 
 1. Imports a sequence counter, adding up the totals of each A (Adenine), T (Thymine), C (Cytosine), and G (Guanine) nucleotide.
 ```from collections import Counter
