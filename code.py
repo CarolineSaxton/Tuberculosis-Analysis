@@ -1,6 +1,5 @@
-
 from Bio import Entrez, SeqIO
-Entrez.email = "add your email here" 
+Entrez.email = "caroline.saxtonrowe@gmail.com" 
 
 # Fetch the DNA sequence from the NCBI database
 accession_number = "NC_000962.3" 
@@ -14,7 +13,6 @@ print(f"RefSeq Accession Number: {record.id}")
 print(f"Total Nucleotides Length: {len(record.seq)}")
 print(f"First 50 Nucleotides: {dna_sequence[:50]}")
 print()
-
 # Import a Counter to find and graph total number of adenine, thymine, guanine and cytosine nucleotides
 from collections import Counter
 nucleotide_counts = Counter(dna_sequence)
@@ -29,9 +27,9 @@ plt.bar(
     nucleotide_percentages.values(),  # y-axis: Percentage of each nucleotide
     color=['yellow', 'red', 'blue', 'green']  # Colors for each nucleotide bar
 )
-plt.title("Nucleotide Frequency")
+plt.title("Nucleotide Frequency")  # Provides context for the visualization
 plt.xlabel("Nucleotide")  # Indicates the nucleotides being counted (A, T, C, G)
-plt.ylabel("Frequency")
+plt.ylabel("Frequency")  # Shows the frequency of each nucleotide
 plt.show()  # Renders the bar chart
 
 # Calculate GC Content
@@ -67,27 +65,27 @@ amino_acid_codes = {
     "TAT": "Tyr", "TAC": "Tyr",                          # Tyrosine
     "TAA": "STOP", "TAG": "STOP", "TGA": "STOP"               # STOP codons
 }
-
-print("Performing Broad Genomic Analysis...")
-choice1 = input("Would you like to use a nucleotide coordinate (input:'n') or codon number (input:'c')?  ")
-if choice1 == "n":
-    coordinate = int(input("Nucleotide Coordinate: ")) - 1
-    print(f"Nucleotide: {dna_sequence[coordinate]}")
-    codon_size = 3
-    codon_sequence = [dna_sequence[i:i + codon_size] for i in range(0, len(dna_sequence), codon_size)]
-    codon_number = (coordinate // 3) + 1
-    print(f"Codon Number: {codon_number}")
-    codon = codon_sequence[codon_number - 1]
-    print(f"Codon: {codon}")
-if choice1 == "c":
-    codon_number = int(input("Codon Number: "))
-    codon_size = 3
-    codon_sequence = [dna_sequence[i:i + codon_size] for i in range(0, len(dna_sequence), codon_size)]
-    codon = codon_sequence[codon_number - 1]
-    print(f"Codon: {codon}")
-amino_acid = amino_acid_codes.get(codon)
-print(f"Amino Acid: {amino_acid}")
-print()
+# Find nucleotide and its coordinate, as well as  the cooresponding codon and amino acid
+complete_genome_analysis = input("Would you like perform complete genome analysis? (yes/no): ")
+if complete_genome_analysis == "yes":
+    choice1 = input("Would you like to use a nucleotide coordinate (input:'n') or codon number (input:'c')?  ")
+    if choice1 == "n":
+        snp_position = int(input("Nucleotide Coordinate: ")) - 1
+        print(f"Nucleotide: {dna_sequence[snp_position]}")
+        codon_size = 3
+        codon_sequence = [dna_sequence[i:i + codon_size] for i in range(0, len(dna_sequence), codon_size)]
+        codon_number = (snp_position // 3) + 1
+        print(f"Codon Number: {codon_number}")
+        codon = codon_sequence[codon_number - 1]
+        print(f"Codon: {codon}")
+    if choice1 == "c":
+        codon_number = int(input("Codon Number: "))
+        codon_size = 3
+        codon_sequence = [dna_sequence[i:i + codon_size] for i in range(0, len(dna_sequence), codon_size)]
+        codon = codon_sequence[codon_number - 1]
+        print(f"Codon: {codon}")
+    amino_acid = amino_acid_codes.get(codon)
+    print(f"Amino Acid: {amino_acid}")
 
 print("Mutation Simulation-")
 mutation = input("Choose a New Nucleotide Replacement(uppercase): ")
@@ -96,14 +94,15 @@ codon_size = 3
 mcodon_sequence = [mutated_sequence[i:i + codon_size] for i in range(0, len(mutated_sequence), codon_size)]
 mcodon_number = (snp_position // 3) + 1
 print(f"Mutated Codon Number: {mcodon_number}")
-mcodon = codon_sequence[mcodon_number - 1]
+mcodon = mcodon_sequence[mcodon_number - 1]
 print(f"Mutated Codon: {mcodon}")
 mamino_acid = amino_acid_codes.get(mcodon)
 print(f"Mutated Amino Acid: {mamino_acid}")
+
 print()
 
 # rpoB gene analysis for MDR
-rpoB_analysis = input("Would you like to perform 'rpoB gene' specific analysis? (yes/no): ")
+rpoB_analysis = input("Would you like to perform rpoB gene analysis? (yes/no): ")
 if rpoB_analysis == "yes":
     rpoB_gene = dna_sequence[759806:763325]
     rpoB_codon_sequence = [rpoB_gene[i:i + codon_size] for i in range(0, len(rpoB_gene), codon_size)]
@@ -114,4 +113,3 @@ if rpoB_analysis == "yes":
     print(amino_acid)
     if 426 < rpoB_codon_number < 452:
         print("The entered codon cooresponds to an amino acid that is within the Rifampicin Resistance Determining Region (RRDR) of the rpoB gene. Mutations in this region may cause Rifampicin anibiotic-resistance strains in the bacterium.")
-
