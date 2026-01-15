@@ -3,18 +3,39 @@ My project was to create a code to perform basic microbiology gene analysis, usi
 
 Tuberculosis is a serious infection that claims roughly a million lives globally each year, cause by the bacteria _Mycobacterium Tuberculosis_. While most cases can currently be treated with antibiotics, more and more antibiotic-resistant strains are appearing. This is a result of random mutations in the bacteria's DNA. Therefore, it is extremely impotant that as research on resistance continues to expand, basic genetic information is quickly acccessible and easy to understand, which can be done with code like this.
 
+## Introduction
+Using the BioPython library, import Entrez to access the official NCBI (National Center for Biotechnology Information) database. With the accession number for _Mycobaterium Tuberculosis_, the code prints out some basic information to intiduce the gene to the user, including total length of the sequence and its first 50 nucleotides.
+```
+from Bio import Entrez, SeqIO
+Entrez.email = "add your email here" 
+
+# Fetch the DNA sequence from the NCBI database
+accession_number = "NC_000962.3" 
+with Entrez.efetch(db="nucleotide", id=accession_number, rettype="fasta", retmode="text") as handle:
+    record = SeqIO.read(handle, "fasta")
+    dna_sequence = record.seq
+
+print()
+print(f"Gene Name: Mycobacterium tuberculosis H37Rv strain")
+print(f"RefSeq Accession Number: {record.id}")
+print(f"Total Nucleotides Length: {len(record.seq)}")
+print(f"First 50 Nucleotides: {dna_sequence[:50]}")
+print()
+```
 
 ## Part 1: Counting and Graphing Total Nucleotide Counts
 Knowing the total counts of each nucleotide and percent of each out of the total of any gene or sequence is important to understanding its strength. This is all determined by a gene's "GC Content", meaning its percent of Guanine or Cytosine nucleotides.  Guanine and Cytosine form triple hydrogen bonds between each other, stronger than those formed by the two other nucloetides (Adenine/Thymine). Therefore, the higher the GC content of a gene, the stronger its DNA is considered because it contains a greater number of (stronger) triple bonds.
 
 1. Imports a sequence counter, adding up the totals of each A (Adenine), T (Thymine), C (Cytosine), and G (Guanine) nucleotide.
-```from collections import Counter
+```
+from collections import Counter
 nucleotide_counts = Counter(dna_sequence)
 print(f"Total Count of Nucleotides: {nucleotide_counts}")
 ```
 
 2. Create a bar graph to visualize the data from sequence counter for users.
-```import matplotlib.pyplot as plt  # Import matplotlib for plotting
+```
+import matplotlib.pyplot as plt  # Import matplotlib for plotting
 total_nucleotides = sum(nucleotide_counts.values())
 nucleotide_percentages = {key: (value / total_nucleotides) * 100 for key, value in nucleotide_counts.items()}
 plt.bar(  
