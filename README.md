@@ -172,3 +172,4 @@ if rpoB_analysis == "yes":
 
 ## Final Output:
 Here is an example of what the final output of the code might look like, as used in Visual Studio Code.
+<img width="1580" height="366" alt="image" src="https://github.com/user-attachments/assets/c8b09f7b-7470-45f3-abda-075ec57be1a7" />
