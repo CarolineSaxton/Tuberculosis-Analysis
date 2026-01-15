@@ -137,7 +137,7 @@ mcodon_sequence = [mutated_sequence[i:i + codon_size] for i in range(0, len(muta
 mcodon_number = (snp_position // 3) + 1
 print(f"Mutated Codon Number: {mcodon_number}")
 mcodon = mcodon_sequence[mcodon_number - 1]
-print(f"Mutated Codon: {codon}")
+print(f"Mutated Codon: {mcodon}")
 mamino_acid = amino_acid_codes.get(mcodon)
 print(f"Mutated Amino Acid: {mamino_acid}")
 ```
