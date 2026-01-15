@@ -95,10 +95,10 @@ mutated_sequence = dna_sequence[:snp_position] + mutation + dna_sequence[snp_pos
 codon_size = 3
 mcodon_sequence = [mutated_sequence[i:i + codon_size] for i in range(0, len(mutated_sequence), codon_size)]
 mcodon_number = (snp_position // 3) + 1
-print(f"Mutated Codon Number: {codon_number}")
-mcodon = codon_sequence[codon_number - 1]
-print(f"Mutated Codon: {codon}")
-mamino_acid = amino_acid_codes.get(codon)
+print(f"Mutated Codon Number: {mcodon_number}")
+mcodon = codon_sequence[mcodon_number - 1]
+print(f"Mutated Codon: {mcodon}")
+mamino_acid = amino_acid_codes.get(mcodon)
 print(f"Mutated Amino Acid: {mamino_acid}")
 print()
 
