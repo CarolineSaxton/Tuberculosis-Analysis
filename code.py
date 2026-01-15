@@ -15,6 +15,34 @@ print(f"Total Nucleotides Length: {len(record.seq)}")
 print(f"First 50 Nucleotides: {dna_sequence[:50]}")
 print()
 
+# Import a Counter to find and graph total number of adenine, thymine, guanine and cytosine nucleotides
+from collections import Counter
+nucleotide_counts = Counter(dna_sequence)
+print(f"Total Count of Nucleotides: {nucleotide_counts}")
+
+import matplotlib.pyplot as plt  # Import matplotlib for plotting
+total_nucleotides = sum(nucleotide_counts.values())
+nucleotide_percentages = {key: (value / total_nucleotides) * 100 for key, value in nucleotide_counts.items()}
+
+plt.bar(
+    nucleotide_percentages.keys(),  # x-axis: Nucleotide types (A, T, C, G)
+    nucleotide_percentages.values(),  # y-axis: Percentage of each nucleotide
+    color=['yellow', 'red', 'blue', 'green']  # Colors for each nucleotide bar
+)
+plt.title("Nucleotide Frequency")
+plt.xlabel("Nucleotide")  # Indicates the nucleotides being counted (A, T, C, G)
+plt.ylabel("Frequency")
+plt.show()  # Renders the bar chart
+
+# Calculate GC Content
+def calculate_gc_content(sequence):
+    gc_count = sequence.count('G') + sequence.count('C')
+    return (gc_count / len(sequence)) * 100
+
+gc_content = calculate_gc_content(dna_sequence)
+
+print(f"GC Content: {gc_content:.2f}%")  # Output example: "GC Content: 46.67%"
+print()
 # Codon to Amino Acid Conversions
 amino_acid_codes = {
     "GCT": "Ala", "GCC": "Ala", "GCA": "Ala", "GCG": "Ala",  # Alanine
@@ -74,34 +102,6 @@ mamino_acid = amino_acid_codes.get(codon)
 print(f"Mutated Amino Acid: {mamino_acid}")
 print()
 
-# Import a Counter to find and graph total number of adenine, thymine, guanine and cytosine nucleotides
-from collections import Counter
-nucleotide_counts = Counter(dna_sequence)
-print(f"Total Count of Nucleotides: {nucleotide_counts}")
-
-import matplotlib.pyplot as plt  # Import matplotlib for plotting
-total_nucleotides = sum(nucleotide_counts.values())
-nucleotide_percentages = {key: (value / total_nucleotides) * 100 for key, value in nucleotide_counts.items()}
-
-plt.bar(
-    nucleotide_percentages.keys(),  # x-axis: Nucleotide types (A, T, C, G)
-    nucleotide_percentages.values(),  # y-axis: Percentage of each nucleotide
-    color=['yellow', 'red', 'blue', 'green']  # Colors for each nucleotide bar
-)
-plt.title("Nucleotide Frequency")
-plt.xlabel("Nucleotide")  # Indicates the nucleotides being counted (A, T, C, G)
-plt.ylabel("Frequency")
-plt.show()  # Renders the bar chart
-
-# Calculate GC Content
-def calculate_gc_content(sequence):
-    gc_count = sequence.count('G') + sequence.count('C')
-    return (gc_count / len(sequence)) * 100
-
-gc_content = calculate_gc_content(dna_sequence)
-
-print(f"GC Content: {gc_content:.2f}%")  # Output example: "GC Content: 46.67%"
-print()
 # rpoB gene analysis for MDR
 rpoB_analysis = input("Would you like to perform 'rpoB gene' specific analysis? (yes/no): ")
 if rpoB_analysis == "yes":
