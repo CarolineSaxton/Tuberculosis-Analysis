@@ -4,7 +4,7 @@ My project was to create a code to perform basic microbiology gene analysis, usi
 Tuberculosis is a serious infection that claims roughly a million lives globally each year, cause by the bacteria _Mycobacterium Tuberculosis_. While most cases can currently be treated with antibiotics, more and more antibiotic-resistant strains are appearing. This is a result of random mutations in the bacteria's DNA. Therefore, it is extremely impotant that as research on resistance continues to expand, basic genetic information is quickly acccessible and easy to understand, which can be done with code like this.
 
 ## Introduction
-Using the BioPython library, import Entrez to access the official NCBI (National Center for Biotechnology Information) database. With the accession number for _Mycobaterium Tuberculosis_, the code prints out some basic information to intiduce the gene to the user, including total length of the sequence and its first 50 nucleotides.
+Download BioPython as an extension, then using the BioPython library, import Entrez to access the official NCBI (National Center for Biotechnology Information) database. With the accession number for _Mycobaterium Tuberculosis_, the code prints out some basic information to intiduce the gene to the user, including total length of the sequence and its first 50 nucleotides.
 ```
 from Bio import Entrez, SeqIO
 Entrez.email = "add your email here" 
