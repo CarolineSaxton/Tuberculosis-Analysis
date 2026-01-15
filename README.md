@@ -167,7 +167,7 @@ if rpoB_analysis == "yes":
     amino_acid = amino_acid_codes.get(rpoB_codon)
     print(amino_acid)
     if 426 < rpoB_codon_number < 452:
-        print("The entered codon cooresponds to an amino acid that is within the Rifampicin Resistance Determining Region (RRDR) of the rpoB gene.")
+        print("The entered codon cooresponds to an amino acid that is within the Rifampicin Resistance Determining Region (RRDR) of the rpoB gene. Mutations in this region may cause Rifampicin anibiotic-resistance strains in the bacterium.")
 ```
 
 ## Final Output:
