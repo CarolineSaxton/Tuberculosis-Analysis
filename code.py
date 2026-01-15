@@ -90,7 +90,7 @@ print(f"Amino Acid: {amino_acid}")
 print()
 
 print("Mutation Simulation-")
-mutation = input("Chose a New Nucleotide Replacement(uppercase): ")
+mutation = input("Choose a New Nucleotide Replacement(uppercase): ")
 mutated_sequence = dna_sequence[:snp_position] + mutation + dna_sequence[snp_position+1:]
 codon_size = 3
 mcodon_sequence = [mutated_sequence[i:i + codon_size] for i in range(0, len(mutated_sequence), codon_size)]
