@@ -126,7 +126,7 @@ Random mutations are one way that antibiotic-resistance in _M. Tuberculosis_ occ
 1. Replace the original nucleotide with a mutated one in the dna sequence
 ```
 print("Mutation Simulation-")
-mutation = input("Chose a New Nucleotide Replacement(uppercase): ")
+mutation = input("Choose a New Nucleotide Replacement(uppercase): ")
 mutated_sequence = dna_sequence[:snp_position] + mutation + dna_sequence[snp_position+1:]
 ```
 
