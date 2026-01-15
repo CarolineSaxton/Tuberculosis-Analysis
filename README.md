@@ -6,7 +6,7 @@ Tuberculosis is a serious infection that claims roughly a million lives globally
 For the rest of the year, I intend to expand the mutation simulating code and focus more on the rifampicin resistance probabilities, adding more complex steps so I can make the code applicable to my undergraduate research I hope to do next year on drug resistant bacteria. While my project could be considered complete, because it does provide the basic information and simulating I was intending, I feel that the analysis can be expanded more still, which is what I will continue to try to do.
 
 ## Introduction
-Download BioPython as an extension, then using the BioPython library, import Entrez to access the official NCBI (National Center for Biotechnology Information) database. With the accession number for _Mycobaterium Tuberculosis_, the code prints out some basic information to intiduce the gene to the user, including total length of the sequence and its first 50 nucleotides.
+Download BioPython as an extension, then using the BioPython library, import Entrez to access the official NCBI (National Center for Biotechnology Information) database. You will need to add an email under line 2 in order to access the Entrez system, due to the NCBI requirements on monitored data accession. With the accession number for _Mycobaterium Tuberculosis_, the code prints out some basic information to intiduce the gene to the user, including total length of the sequence and its first 50 nucleotides.
 ```
 from Bio import Entrez, SeqIO
 Entrez.email = "add your email here" 
